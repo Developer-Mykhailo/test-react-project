@@ -1,0 +1,8 @@
+.options_wrap {
+  display: flex;
+  gap: 10px;
+}
+
+.options_wrap button {
+  padding: 8px;
+}
