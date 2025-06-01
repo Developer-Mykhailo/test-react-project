@@ -1,5 +1,6 @@
 import Container from "./components/Container/Container";
 import Description from "./components/Description/Description";
+import Feedback from "./components/Feedback/Feedback";
 import Options from "./components/Options/Options";
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
     <Container>
       <Description />
       <Options />
+      <Feedback />
     </Container>
   );
 }
