@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Container from "./components/Container/Container";
 import Description from "./components/Description/Description";
 import Feedback from "./components/Feedback/Feedback";
@@ -7,16 +7,21 @@ import Notification from "./components/Notification/Notification";
 
 function App() {
   // state
-  const [feedback, setFeedback] = useState({
-    good: 0,
-    neutral: 0,
-    bad: 0,
+  const [feedback, setFeedback] = useState(() => {
+    const saved = localStorage.getItem("feedback"); // from storage
+
+    return saved ? JSON.parse(saved) : { good: 0, neutral: 0, bad: 0 };
   });
   const { good, neutral, bad } = feedback;
 
   //derived values
   const total = good + neutral + bad;
   const positive = total ? Math.round((good / total) * 100) : 0;
+
+  // storage
+  useEffect(() => {
+    localStorage.setItem("feedback", JSON.stringify(feedback));
+  }, [feedback]);
 
   // handlers
   const updateFeedback = (type) => {
