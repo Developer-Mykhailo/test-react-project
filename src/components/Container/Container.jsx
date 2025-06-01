@@ -1,7 +1,7 @@
 import s from "./Container.module.css";
 
-const Container = ({ chidren }) => {
-  return <div className={s.container}>{chidren}</div>;
+const Container = ({ children }) => {
+  return <div className={s.container}>{children}</div>;
 };
 
 export default Container;

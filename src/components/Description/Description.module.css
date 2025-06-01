@@ -1,0 +1,11 @@
+.descr_wrap {
+  margin-bottom: 20px;
+}
+
+.title {
+  margin-bottom: 20px;
+}
+
+.title + p {
+  font-size: 20px;
+}
